@@ -16,7 +16,7 @@
          layer=".interfaces.IContentWellPortlets"
          permission="zope2.View"
          template="templates/inheaderportlets.pt"
-    /> 
+    />
  <!-- add a management view for the portlet manager -->
     <browser:page
          name="manage-portletsinheader"
@@ -25,7 +25,7 @@
          template="templates/manageinheaderportlets.pt"
          layer=".interfaces.IContentWellPortlets"
          permission="plone.app.portlets.ManagePortlets"
-    />       
+    />
 <!-- PORTLETS ABOVE CONTENT -->
 <!-- add a viewlet to the top of the content well -->
     <browser:viewlet
@@ -35,7 +35,7 @@
          layer=".interfaces.IContentWellPortlets"
          permission="zope2.View"
          template="templates/portletsabovecontent.pt"
-    /> 
+    />
 
 <!-- add a management view for the portlet manager -->
     <browser:page
@@ -55,9 +55,9 @@
          class=".viewlets.PortletsBelowViewlet"
          manager="plone.app.layout.viewlets.interfaces.IBelowContent"
          layer=".interfaces.IContentWellPortlets"
-         permission="zope2.View" 
+         permission="zope2.View"
          template="templates/portletsbelowcontent.pt"
-    /> 
+    />
 
 <!-- add a management view for the portlet manager -->
     <browser:page
@@ -68,8 +68,8 @@
          layer=".interfaces.IContentWellPortlets"
          permission="plone.app.portlets.ManagePortlets"
     />
-    
-    
+
+
 <!-- FOOTER PORTLETS -->
 <!-- add a viewlet to the footer area -->
     <browser:viewlet
@@ -79,7 +79,7 @@
          layer=".interfaces.IContentWellPortlets"
          permission="zope2.View"
          template="templates/footerportlets.pt"
-    /> 
+    />
 
 <!-- add a management view for the portlet manager -->
     <browser:page
@@ -90,8 +90,29 @@
          layer=".interfaces.IContentWellPortlets"
          permission="plone.app.portlets.ManagePortlets"
     />
-    
-<!-- RESOURCE DIRECTORIES -->   
+
+<!-- BELOW TITLE PORTLETS -->
+<!-- add a viewlet to the footer area -->
+    <browser:viewlet
+         name="contentwellportlets.belowtitleportlets"
+         class=".viewlets.PortletsBelowTitleViewlet"
+         manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+         layer=".interfaces.IContentWellPortlets"
+         permission="zope2.View"
+         template="templates/portletsbelowcontenttitle.pt"
+    /> 
+
+<!-- add a management view for the portlet manager -->
+    <browser:page
+         name="manage-portletsbelowtitlecontent"
+         for="plone.portlets.interfaces.ILocalPortletAssignable"
+         class="plone.app.portlets.browser.manage.ManageContextualPortlets"
+         template="templates/manageportletsbelowtitle.pt"
+         layer=".interfaces.IContentWellPortlets"
+         permission="plone.app.portlets.ManagePortlets"
+    />
+
+<!-- RESOURCE DIRECTORIES -->
 <!-- Register the resource directory for stylesheets -->
     <browser:resourceDirectory
         name="ContentWellPortlets.styles"

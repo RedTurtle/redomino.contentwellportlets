@@ -38,7 +38,7 @@ class ContentWellPortletsViewlet(ViewletBase):
         for mgr, name in self.portletManagers():
             if mgr(self.context, self.request, self).visible:
                 visibleManagers.append(name)
-        
+
         managers = []
         numManagers = len(visibleManagers)
         for counter, name in enumerate(visibleManagers):
@@ -51,12 +51,12 @@ class ContentWellPortletsViewlet(ViewletBase):
 class PortletsInHeaderViewlet(ContentWellPortletsViewlet):
     name = 'InHeaderPortletManager'
     manage_view = '@@manage-portletsinheader'
-            
+
 
 class PortletsAboveViewlet(ContentWellPortletsViewlet):
     name = 'AbovePortletManager'
     manage_view = '@@manage-portletsabovecontent'
-            
+
 
 class PortletsBelowViewlet(ContentWellPortletsViewlet):
     name = 'BelowPortletManager'
@@ -66,3 +66,7 @@ class PortletsBelowViewlet(ContentWellPortletsViewlet):
 class FooterPortletsViewlet(ContentWellPortletsViewlet):
     name = 'FooterPortletManager'
     manage_view = '@@manage-portletsfooter'
+
+class PortletsBelowTitleViewlet(ContentWellPortletsViewlet):
+    name = 'BelowTitlePortletManager'
+    manage_view = '@@manage-portletsbelowtitlecontent'
